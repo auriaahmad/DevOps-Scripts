@@ -3,23 +3,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     paths:
-      - "4_CICD/index.html"  # Only trigger when index.html in 4_CICD changes
-    branches:
-      - main  # Trigger only for changes pushed to the main branch
+      - '4_CICD/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./4_CICD  # Use the 4_CICD directory for publishing
-          destination_dir: /  # Deploy the contents to the root of gh-pages
+          publish_dir: ./4_CICD
