@@ -17,3 +17,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./4_CICD
+          # Ensure clean deployment by removing old files
+          force_orphan: true
