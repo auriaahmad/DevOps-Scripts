@@ -1,0 +1,22 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    paths:
+      - "4 CICD/index.html"  # Only trigger the workflow when index.html in 4 CICD changes
+    branches:
+      - main  # Trigger only for changes pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./4 CICD  # Path to the folder containing index.html (relative to repo root)
