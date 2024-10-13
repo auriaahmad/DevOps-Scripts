@@ -6,13 +6,13 @@ Here is a shell script that meets the requirements for analyzing the `nginx-acce
 
 2. **Create the Script**: Save the following script as `nginx-log-analyzer.sh` in the same directory as the log file.
 
-### Script: `nginx-log-analyzer.sh`
+### Script: `nginx-log-analyzer.sh.txt`
 
 ```bash
 #!/bin/bash
 
 # Define the log file location
-LOG_FILE="nginx-access.log.txt"
+LOG_FILE="nginx-access.log"
 
 # Check if log file exists
 if [ ! -f "$LOG_FILE" ]; then
