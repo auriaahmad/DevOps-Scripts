@@ -3,9 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     paths:
-      - "4 CICD/index.html"  # Trigger workflow only when index.html in 4 CICD changes
+      - "4_CICD/index.html"  # Only trigger when index.html in 4_CICD changes
     branches:
-      - main  # Trigger only for pushes to the main branch
+      - main  # Trigger only for changes pushed to the main branch
 
 jobs:
   deploy:
@@ -21,5 +21,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./4 CICD  # This ensures only the contents of 4 CICD are deployed
-          destination_dir: /      # Ensure it is deployed to the root of gh-pages
+          publish_dir: ./4_CICD  # Use the 4_CICD directory for publishing
+          destination_dir: /  # Deploy the contents to the root of gh-pages
