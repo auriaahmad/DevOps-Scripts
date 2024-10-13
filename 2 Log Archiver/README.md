@@ -2,6 +2,16 @@
 # Request to Follow and Star the Repository. Thanks :)
 # Step-by-Step Execution Instructions
 
+### What the Script Does:
+
+- **Specify Log Directory**: Allows the user to select which log directory to archive.
+- **Days to Keep Logs**: Allows the user to specify how long logs should be retained before archiving.
+- **Days to Keep Backup Archives**: Specifies how long archived backups should be kept before they are deleted.
+- **Run Archiving**: Compresses and archives logs older than the specified days, logs the process, deletes the old logs, and cleans up old backups.
+- **Cron Setup**: Optionally adds the script to run daily at a specified time via `cron`.
+
+This tool provides a simple way to manage log files and their backups interactively from the command line.
+
 1. **Save the Script:**
    - Open your terminal.
    - Use `nano` or another editor to create the file in `/usr/local/bin/`.
@@ -42,13 +52,3 @@
      crontab -e
      ```
    - Remove the line that contains `/usr/local/bin/log-archive.sh` and save.
-
-### What the Script Does:
-
-- **Specify Log Directory**: Allows the user to select which log directory to archive.
-- **Days to Keep Logs**: Allows the user to specify how long logs should be retained before archiving.
-- **Days to Keep Backup Archives**: Specifies how long archived backups should be kept before they are deleted.
-- **Run Archiving**: Compresses and archives logs older than the specified days, logs the process, deletes the old logs, and cleans up old backups.
-- **Cron Setup**: Optionally adds the script to run daily at a specified time via `cron`.
-
-This tool provides a simple way to manage log files and their backups interactively from the command line.
